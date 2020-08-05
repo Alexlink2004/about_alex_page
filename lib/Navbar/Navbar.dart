@@ -27,7 +27,7 @@ class DesktopNavbar extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text(
-              "RetroPortal Studio",
+              "Alejandro Apodaca",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -43,29 +43,29 @@ class DesktopNavbar extends StatelessWidget {
                   width: 30,
                 ),
                 Text(
-                  "About Us",
+                  "Acerca de mi",
                   style: TextStyle(color: Colors.white),
                 ),
                 SizedBox(
                   width: 30,
                 ),
                 Text(
-                  "Portfolio",
+                  "Portafolio",
                   style: TextStyle(color: Colors.white),
                 ),
                 SizedBox(
                   width: 30,
                 ),
-                MaterialButton(
-                  color: Colors.pink,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(20.0))),
-                  onPressed: () {},
-                  child: Text(
-                    "Get Started",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                )
+//                MaterialButton(
+//                  color: Colors.pink,
+//                  shape: RoundedRectangleBorder(
+//                      borderRadius: BorderRadius.all(Radius.circular(20.0))),
+//                  onPressed: () {},
+//                  child: Text(
+//                    "Get Started",
+//                    style: TextStyle(color: Colors.white),
+//                  ),
+//                )
               ],
             )
           ],
@@ -83,7 +83,7 @@ class MobileNavbar extends StatelessWidget {
       child: Container(
         child: Column(children: <Widget>[
           Text(
-            "RetroPortal Studio",
+            "Alejandro Apodaca",
             style: TextStyle(
                 fontWeight: FontWeight.bold, color: Colors.white, fontSize: 30),
           ),
@@ -92,22 +92,18 @@ class MobileNavbar extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
+                SizedBox(
+                  width: 30,
+                ),
                 Text(
-                  "Home",
+                  "Acerca de mi",
                   style: TextStyle(color: Colors.white),
                 ),
                 SizedBox(
                   width: 30,
                 ),
                 Text(
-                  "About Us",
-                  style: TextStyle(color: Colors.white),
-                ),
-                SizedBox(
-                  width: 30,
-                ),
-                Text(
-                  "Portfolio",
+                  "Portafolio",
                   style: TextStyle(color: Colors.white),
                 ),
               ],
