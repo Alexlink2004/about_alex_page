@@ -10,7 +10,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Alejandro Apodaca',
-      theme: ThemeData(primarySwatch: Colors.red, fontFamily: "Montserrat"),
+      theme: ThemeData(
+        primarySwatch: Colors.red,
+        fontFamily: "Montserrat",
+        primaryColor: Colors.white,
+        textTheme: TextTheme(
+          subtitle1: TextStyle(color: Colors.white),
+        ),
+      ),
       home: MyHomePage(),
     );
   }

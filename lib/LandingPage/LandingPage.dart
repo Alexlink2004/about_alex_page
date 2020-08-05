@@ -1,51 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_webpage/Models/portfolio_items.dart';
+import 'package:flutter_webpage/Widgets/portfolio_item_widget.dart';
 
 class LandingPage extends StatelessWidget {
-  List<Widget> pageChildren(double width) {
+  List<Widget> pageChildren(double width, var size) {
     return <Widget>[
-      Container(
-        width: width,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              "Texto de ejemplo",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 40.0,
-                  color: Colors.white),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
-              child: Text(
-                "blablablablabla",
-                style: TextStyle(fontSize: 16.0, color: Colors.white),
-              ),
-            ),
-            MaterialButton(
-              color: Colors.white,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20.0))),
-              onPressed: () {},
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 20.0, horizontal: 40.0),
-                child: Text(
-                  "Ver portafolio",
-                  style: TextStyle(color: Colors.red),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
-      Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20.0),
-        child: Image.asset(
-          "assets/images/lp_image.png",
-          width: width,
-        ),
-      )
+      ListWidget(),
     ];
   }
 
@@ -53,16 +13,47 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth > 800) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: pageChildren(constraints.biggest.width / 2),
-          );
+        if (constraints.maxWidth > 650) {
+          return GridWidget();
         } else {
-          return Column(
-            children: pageChildren(constraints.biggest.width),
-          );
+          return ListWidget();
         }
+      },
+    );
+  }
+}
+
+class GridWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      shrinkWrap: true,
+      gridDelegate:
+          SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
+      itemCount: portfolioItems.length,
+      itemBuilder: (context, index) {
+        return PortfolioItemWidget(
+          title: portfolioItems[index].title,
+          subtitle: portfolioItems[index].subtitle,
+          image: portfolioItems[index].image,
+        );
+      },
+    );
+  }
+}
+
+class ListWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return ListView.builder(
+      shrinkWrap: true,
+      itemCount: portfolioItems.length,
+      itemBuilder: (context, index) {
+        return PortfolioItemWidget(
+          title: portfolioItems[index].title,
+          subtitle: portfolioItems[index].subtitle,
+          image: portfolioItems[index].image,
+        );
       },
     );
   }
