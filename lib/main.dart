@@ -26,7 +26,10 @@ class MyHomePage extends StatelessWidget {
           gradient: LinearGradient(
               begin: Alignment.centerLeft,
               end: Alignment.centerRight,
-              colors: [Colors.red, Colors.orange]),
+              colors: [
+                Colors.red,
+                Colors.orange,
+              ]),
         ),
         child: SingleChildScrollView(
           child: Column(
