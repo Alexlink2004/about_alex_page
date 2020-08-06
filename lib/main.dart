@@ -31,11 +31,12 @@ class MyHomePage extends StatelessWidget {
         height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
+              begin: Alignment.bottomLeft,
+              end: Alignment.topRight,
               colors: [
-                Colors.red,
                 Colors.orange,
+                Colors.deepOrange,
+                Colors.red,
               ]),
         ),
         child: SingleChildScrollView(

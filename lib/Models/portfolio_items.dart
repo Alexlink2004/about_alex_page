@@ -1,11 +1,21 @@
 import 'package:flutter/material.dart';
 
 class PortfolioItem {
-  PortfolioItem({this.title, this.image, this.subtitle});
+  PortfolioItem({
+    this.title,
+    this.image,
+    this.subtitle,
+    this.url,
+    this.icon1 = Icons.android,
+    this.icon2 = Icons.phone_android,
+  });
 
   String title;
   String subtitle;
+  String url;
   Image image;
+  IconData icon1;
+  IconData icon2;
 }
 
 List<PortfolioItem> portfolioItems = [
@@ -14,6 +24,8 @@ List<PortfolioItem> portfolioItems = [
     subtitle: 'Videojuego',
     image: Image.network(
         'https://lh3.googleusercontent.com/pKT453nwT0PMPJWkhteh0j8LIoHA4eT7UJ6hZZW3tjxUGO8gfUrc2Mk4Pr5uVepbmWdI=s180-rw'),
+    icon1: Icons.android,
+    icon2: Icons.backup,
   ),
   PortfolioItem(
     title: 'Endless Beats',

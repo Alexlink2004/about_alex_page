@@ -6,11 +6,15 @@ class PortfolioItemWidget extends StatelessWidget {
     this.image,
     this.title,
     this.subtitle,
+    this.icon2,
+    this.icon1,
   });
 
   final String title;
   final Image image;
   final String subtitle;
+  final IconData icon1;
+  final IconData icon2;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,7 @@ class PortfolioItemWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(30),
         ),
         child: ListTile(
-          leading: image,
+          leading: ClipOval(child: image),
           title: Text(
             title,
             style: kColorTextStyle,
@@ -30,6 +34,9 @@ class PortfolioItemWidget extends StatelessWidget {
           subtitle: Text(
             subtitle,
             style: TextStyle(color: Colors.grey),
+          ),
+          trailing: Icon(
+            icon1,
           ),
         ),
       ),
