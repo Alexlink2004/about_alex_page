@@ -3,17 +3,17 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "main.dart.js": "e8be9722e5a6dcdc38a840b618f8e4bf",
-"index.html": "523e8344930597d4256b511ae9095e4b",
-"/": "523e8344930597d4256b511ae9095e4b",
-"assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
+  "main.dart.js": "74d28494a06b8d2a40c735124c505a81",
+"index.html": "53df950392b377b9999666c4ef589642",
+"/": "53df950392b377b9999666c4ef589642",
 "assets/FontManifest.json": "957423d262d0760a97e6d1ba8e4280e1",
+"assets/fonts/MaterialIcons-Regular.ttf": "56d3ffdef7a25659eab6a68a3fbfaf16",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "9a62a954b81a1ad45a58b9bcea89b50b",
+"assets/AssetManifest.json": "c6772928aa819ed8a8a332b108fccfdf",
+"assets/NOTICES": "a8b252f654d2b343dd67110a290fefdc",
 "assets/assets/fonts/Montserrat-Regular.ttf": "07689d4eaaa3d530d58826b5d7f84735",
 "assets/assets/fonts/Montserrat-Bold.ttf": "d3085f686df272f9e1a267cc69b2d24f",
-"assets/assets/images/lp_image.png": "5aad4d4216174954f5228d7d268546e8",
-"assets/NOTICES": "38d935c0380b9ff109b0c14f9fb3bbd1",
-"assets/AssetManifest.json": "c6772928aa819ed8a8a332b108fccfdf"
+"assets/assets/images/lp_image.png": "5aad4d4216174954f5228d7d268546e8"
 };
 
 // The application shell files that are downloaded before a service worker can
