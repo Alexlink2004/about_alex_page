@@ -9,64 +9,78 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   List<Widget> pageChildren(double width, var size) {
-    return <Widget>[
-      ListWidget(),
-    ];
+    return <Widget>[];
   }
 
   int getNumberOfRows(constraints) {
-    if (constraints.maxWidth >= 650 && constraints.maxWidth < 1100) {
+    if (constraints.maxWidth < 650) {
+      isLarge = false;
+      return 1;
+    } else if (constraints.maxWidth >= 650 && constraints.maxWidth < 900) {
+      isLarge = true;
+      return 2;
+    } else if (constraints.maxWidth > 900) {
+      isLarge = true;
       return 3;
-    } else if (constraints.maxWidth > 1100) {
-      return 5;
+    } else {
+      return 1;
     }
   }
 
-  String header = 'Portafolio de software:';
+  String header = 'Historial de software:';
+  bool isLarge = true;
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return LayoutBuilder(
       builder: (context, constraints) {
-        if (constraints.maxWidth > 650) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Text(
-                header,
-                style: TextStyle(
-                  color: Colors.white,
-                ),
-              ),
-              GridWidget(
-                numberOfRows: getNumberOfRows(constraints),
-              ),
-            ],
-          );
-        } else {
-          return Column(
-            children: [
-              Text(
-                header,
-                style: TextStyle(color: Colors.white),
-              ),
-              ListWidget(),
-            ],
-          );
-        }
+//        if (constraints.maxWidth > 650) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              header,
+              style:
+              TextStyle(color: Colors.white, fontSize: size.width * 0.03),
+            ),
+            PortfolioBuilder(
+              numberOfRows: getNumberOfRows(constraints),
+              isLarge: isLarge,
+            ),
+          ],
+        );
+//        } else {
+//          return Column(
+//            children: [
+//              Text(
+//                header,
+//                style:
+//                    TextStyle(color: Colors.white, fontSize: size.width * 0.05),
+//              ),
+//              ListWidget(),
+//            ],
+//          );
+//        }
       },
     );
   }
 }
 
-class GridWidget extends StatelessWidget {
-  GridWidget({@required this.numberOfRows});
+class PortfolioBuilder extends StatelessWidget {
+  PortfolioBuilder({
+    @required this.numberOfRows,
+    @required this.isLarge = false,
+  });
 
   final int numberOfRows;
+  final bool isLarge;
 
   @override
   Widget build(BuildContext context) {
-    return GridView.builder(
+    return isLarge
+        ? GridView.builder(
       shrinkWrap: true,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: numberOfRows,
@@ -74,6 +88,7 @@ class GridWidget extends StatelessWidget {
       itemCount: portfolioItems.length,
       itemBuilder: (context, index) {
         return PortfolioItemWidget(
+          isLarge: isLarge,
           title: portfolioItems[index].title,
           subtitle: portfolioItems[index].subtitle,
           image: portfolioItems[index].image,
@@ -81,14 +96,8 @@ class GridWidget extends StatelessWidget {
           icon2: portfolioItems[index].icon2,
         );
       },
-    );
-  }
-}
-
-class ListWidget extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
+    )
+        : ListView.builder(
       shrinkWrap: true,
       itemCount: portfolioItems.length,
       itemBuilder: (context, index) {
