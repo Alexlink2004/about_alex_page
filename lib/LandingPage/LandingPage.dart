@@ -19,9 +19,12 @@ class _LandingPageState extends State<LandingPage> {
     } else if (constraints.maxWidth >= 650 && constraints.maxWidth < 900) {
       isLarge = true;
       return 2;
-    } else if (constraints.maxWidth > 900) {
+    } else if (constraints.maxWidth > 900 && constraints.maxWidth < 1300) {
       isLarge = true;
       return 3;
+    } else if (constraints.maxWidth >= 1300) {
+      isLarge = true;
+      return 4;
     } else {
       return 1;
     }
@@ -38,15 +41,18 @@ class _LandingPageState extends State<LandingPage> {
 //        if (constraints.maxWidth > 650) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment:
+              isLarge ? CrossAxisAlignment.start : CrossAxisAlignment.center,
           children: [
             Text(
               header,
-              style:
-              TextStyle(color: Colors.white, fontSize: size.width * 0.03),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: isLarge ? size.width * 0.02 : size.width * 0.05),
             ),
             PortfolioBuilder(
               numberOfRows: getNumberOfRows(constraints),
+              constraints: constraints,
               isLarge: isLarge,
             ),
           ],
@@ -72,10 +78,12 @@ class PortfolioBuilder extends StatelessWidget {
   PortfolioBuilder({
     @required this.numberOfRows,
     @required this.isLarge = false,
+    this.constraints,
   });
 
   final int numberOfRows;
   final bool isLarge;
+  final constraints;
 
   @override
   Widget build(BuildContext context) {
@@ -88,12 +96,14 @@ class PortfolioBuilder extends StatelessWidget {
       itemCount: portfolioItems.length,
       itemBuilder: (context, index) {
         return PortfolioItemWidget(
+          constraints: constraints,
           isLarge: isLarge,
           title: portfolioItems[index].title,
           subtitle: portfolioItems[index].subtitle,
           image: portfolioItems[index].image,
           icon1: portfolioItems[index].icon1,
           icon2: portfolioItems[index].icon2,
+          isAppStore: portfolioItems[index].isAppStore(),
         );
       },
     )
@@ -102,11 +112,15 @@ class PortfolioBuilder extends StatelessWidget {
       itemCount: portfolioItems.length,
       itemBuilder: (context, index) {
         return PortfolioItemWidget(
+          constraints: constraints,
           title: portfolioItems[index].title,
           subtitle: portfolioItems[index].subtitle,
           image: portfolioItems[index].image,
           icon1: portfolioItems[index].icon1,
           icon2: portfolioItems[index].icon2,
+          isAppStore: portfolioItems[index].isAppStore(),
+          linkAppStore: portfolioItems[index].linkAppStore,
+          linkGooglePlay: portfolioItems[index].linkGooglePlay,
         );
       },
     );

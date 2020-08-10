@@ -34,21 +34,14 @@ class MyHomePage extends StatelessWidget {
               begin: Alignment.bottomLeft,
               end: Alignment.topRight,
               colors: [
-                Colors.orange,
-                Colors.deepOrange,
-                Colors.red,
+                Colors.blue,
+                Colors.lightBlue,
+                Colors.yellow,
               ]),
         ),
         child: SingleChildScrollView(
           child: Column(
-            children: <Widget>[
-              Navbar(),
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                    vertical: 20.0, horizontal: 40.0),
-                child: LandingPage(),
-              )
-            ],
+            children: <Widget>[Navbar(), LandingPage()],
           ),
         ),
       ),
