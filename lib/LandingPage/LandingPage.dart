@@ -31,7 +31,7 @@ class _LandingPageState extends State<LandingPage> {
   }
 
   String header = 'Historial de software:';
-  bool isLarge = true;
+  bool isLarge = false;
 
   @override
   Widget build(BuildContext context) {
@@ -89,40 +89,43 @@ class PortfolioBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return isLarge
         ? GridView.builder(
-      shrinkWrap: true,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: numberOfRows,
-      ),
-      itemCount: portfolioItems.length,
-      itemBuilder: (context, index) {
-        return PortfolioItemWidget(
-          constraints: constraints,
-          isLarge: isLarge,
-          title: portfolioItems[index].title,
-          subtitle: portfolioItems[index].subtitle,
-          image: portfolioItems[index].image,
-          icon1: portfolioItems[index].icon1,
-          icon2: portfolioItems[index].icon2,
-          isAppStore: portfolioItems[index].isAppStore(),
-        );
-      },
-    )
-        : ListView.builder(
-      shrinkWrap: true,
-      itemCount: portfolioItems.length,
-      itemBuilder: (context, index) {
-        return PortfolioItemWidget(
-          constraints: constraints,
-          title: portfolioItems[index].title,
-          subtitle: portfolioItems[index].subtitle,
-          image: portfolioItems[index].image,
-          icon1: portfolioItems[index].icon1,
-          icon2: portfolioItems[index].icon2,
-          isAppStore: portfolioItems[index].isAppStore(),
-          linkAppStore: portfolioItems[index].linkAppStore,
-          linkGooglePlay: portfolioItems[index].linkGooglePlay,
-        );
-      },
-    );
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: numberOfRows,
+            ),
+            itemCount: portfolioItems.length,
+            itemBuilder: (context, index) {
+              return PortfolioItemWidget(
+                constraints: constraints,
+                isLarge: isLarge,
+                title: portfolioItems[index].title,
+                subtitle: portfolioItems[index].subtitle,
+                image: portfolioItems[index].image,
+                icon1: portfolioItems[index].icon1,
+                icon2: portfolioItems[index].icon2,
+                isAppStore: portfolioItems[index].isAppStore(),
+              );
+            },
+          )
+        : SingleChildScrollView(
+            child: ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: portfolioItems.length,
+              itemBuilder: (context, index) {
+                return PortfolioItemWidget(
+                  constraints: constraints,
+                  title: portfolioItems[index].title,
+                  subtitle: portfolioItems[index].subtitle,
+                  image: portfolioItems[index].image,
+                  icon1: portfolioItems[index].icon1,
+                  icon2: portfolioItems[index].icon2,
+                  isAppStore: portfolioItems[index].isAppStore(),
+                  linkAppStore: portfolioItems[index].linkAppStore,
+                  linkGooglePlay: portfolioItems[index].linkGooglePlay,
+                );
+              },
+            ),
+          );
   }
 }
