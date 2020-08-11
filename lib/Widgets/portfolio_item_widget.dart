@@ -92,53 +92,53 @@ class PortfolioItemWidget extends StatelessWidget {
                   );
                 })
             : Alert(
-            style: AlertStyle(
-              backgroundColor: Color(0x66ffffff),
-            ),
-            closeFunction: () => print('closed popup'),
-            context: context,
-            title: '',
-            buttons: [
-              DialogButton(
-                child: Text('App Store'),
-                onPressed: () => launch(linkAppStore),
-                color: Colors.white,
-              ),
-              DialogButton(
-                child: Text(
-                  'Google Play',
-                  style: TextStyle(color: Colors.white),
+                style: AlertStyle(
+                  backgroundColor: Color(0x66ffffff),
                 ),
-                onPressed: () => launch(linkGooglePlay),
-                color: Colors.greenAccent,
-              ),
-            ],
-            content: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                children: [
-                  Center(
-                    child: ClipOval(
-                      child: Container(color: Colors.white, child: image),
-                    ),
+                closeFunction: () => print('closed popup'),
+                context: context,
+                title: '',
+                buttons: [
+                  DialogButton(
+                    child: Text('App Store'),
+                    onPressed: () => launch(linkAppStore),
+                    color: Colors.white,
                   ),
-                  Text(
-                    title,
-                    style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.white,
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
+                  DialogButton(
                     child: Text(
-                      description ?? "description",
-                      style: TextStyle(
-                        fontSize: 30,
-                        color: Colors.white,
-                      ),
+                      'Google Play',
+                      style: TextStyle(color: Colors.white),
                     ),
+                    onPressed: () => launch(linkGooglePlay),
+                    color: Colors.greenAccent,
                   ),
+                ],
+                content: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    children: [
+                      Center(
+                        child: ClipOval(
+                          child: Container(color: Colors.white, child: image),
+                        ),
+                      ),
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontSize: 40,
+                          color: Colors.white,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          description ?? "description",
+                          style: TextStyle(
+                            fontSize: 30,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
 //                        ListTile(
 //                          title: Text(title),
 //                          trailing: Icon(icon1),

@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -60,6 +61,14 @@ class DesktopNavbar extends StatelessWidget {
                 SizedBox(
                   width: 30,
                 ),
+                GestureDetector(
+                  onTap: () => launch('https://github.com/Alexlink2004'),
+                  child: Image.asset(
+                    'assets/images/github.png',
+                    scale: 6,
+                  ),
+                ),
+
 //                MaterialButton(
 //                  color: Colors.pink,
 //                  shape: RoundedRectangleBorder(
@@ -88,42 +97,53 @@ class MobileNavbar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Column(children: <Widget>[
-              Text(
-                "Alejandro Apodaca",
-                style: TextStyle(
+            Flexible(
+              flex: 4,
+              child: Column(children: <Widget>[
+                AutoSizeText(
+                  "Alejandro Apodaca",
+                  maxLines: 1,
+                  style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
-                    fontSize: 30),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(12.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Text(
-                      "Acerca de mi",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                    SizedBox(
-                      width: 30,
-                    ),
-                    Text(
-                      "Portafolio",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
+                    fontSize: 30,
+                  ),
                 ),
-              )
-            ]),
-            GestureDetector(
-              onTap: () => launch('https://github.com/Alexlink2004'),
-              child: Image.asset(
-                'assets/images/github.png',
-                scale: 6,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(
+                        width: 30,
+                      ),
+                      AutoSizeText(
+                        "Acerca de mi",
+                        style: TextStyle(color: Colors.white),
+                        softWrap: true,
+                      ),
+                      SizedBox(
+                        width: 30,
+                      ),
+                      AutoSizeText(
+                        "Portafolio",
+                        overflow: TextOverflow.visible,
+                        style: TextStyle(color: Colors.white),
+                        softWrap: true,
+                      ),
+                    ],
+                  ),
+                )
+              ]),
+            ),
+            Flexible(
+              flex: 1,
+              child: GestureDetector(
+                onTap: () => launch('https://github.com/Alexlink2004'),
+                child: Image.asset(
+                  'assets/images/github.png',
+                  scale: 6,
+                ),
               ),
             ),
           ],

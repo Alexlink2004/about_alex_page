@@ -65,14 +65,14 @@ class _LandingPageState extends State<LandingPage> {
         return Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment:
-          isLarge ? CrossAxisAlignment.center : CrossAxisAlignment.center,
+              isLarge ? CrossAxisAlignment.center : CrossAxisAlignment.center,
           children: [
             Card(
               elevation: 4.0,
               color: Color(0x66ffffff),
               child: Container(
                 width: !isLarge ? size.width : 700,
-                height: size.height * .6,
+                height: size.height * .7,
                 child: Column(
 //                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -96,11 +96,11 @@ class _LandingPageState extends State<LandingPage> {
                       child: AutoSizeText(
                         'Hola, mi nombre es Alejandro Apodaca, soy Estudiante de bachillerato entusiasta y autodidacta en programación y automatización, apasionado por el desarrollo de soluciones prácticas especialmente en aquellas que ayudan a las personas a mejorar su vida.',
                         style: TextStyle(
-                            fontSize: 60,
-                            color: Colors.white,
-                            wordSpacing: 2,
-                            height: 1.20),
-                        maxLines: !isLarge ? 6 : 6,
+                          color: Colors.white,
+                          height: 1,
+                          fontSize: 70,
+                        ),
+                        maxLines: !isLarge ? 8 : 6,
                         textAlign: TextAlign.center,
                       ),
                     ),
