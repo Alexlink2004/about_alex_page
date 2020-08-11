@@ -3,7 +3,7 @@ const MANIFEST = 'flutter-app-manifest';
 const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
-  "main.dart.js": "9e1ba84579201f367ef42d207d295895",
+  "main.dart.js": "3a9fc8c01bbe00caf86ba65f004584f2",
 "index.html": "ea610557fd9e1bd926f5e347d2660782",
 "/": "ea610557fd9e1bd926f5e347d2660782",
 "assets/FontManifest.json": "957423d262d0760a97e6d1ba8e4280e1",
@@ -24,18 +24,21 @@ const RESOURCES = {
 "assets/packages/rflutter_alert/assets/images/icon_info.png": "3f71f68cae4d420cecbf996f37b0763c",
 "assets/packages/rflutter_alert/assets/images/icon_warning.png": "ccfc1396d29de3ac730da38a8ab20098",
 "assets/packages/rflutter_alert/assets/images/close.png": "13c168d8841fcaba94ee91e8adc3617f",
-"assets/AssetManifest.json": "f2aa7d6b8d0d69c42ed920b754a7e5b5",
+"assets/AssetManifest.json": "3999a32ca21fe369740f8a51350ffa66",
 "assets/NOTICES": "a33853d2e871b2ad3e15c4958a030741",
 "assets/assets/fonts/Montserrat-Regular.ttf": "07689d4eaaa3d530d58826b5d7f84735",
 "assets/assets/fonts/Montserrat-Bold.ttf": "d3085f686df272f9e1a267cc69b2d24f",
+"assets/assets/images/trigomath.jpg": "84e2261d0e6a5bf7d20ad6d98456941c",
 "assets/assets/images/Endless.webp": "562c2cc15db80b33c357f7561f5e80ee",
 "assets/assets/images/icon_Google%2520Play%2520(monochrome)%2520%255Binverse%255D.png": "d92330c8dac63245fe95546e53ea992b",
 "assets/assets/images/github.png": "a17150d90465d2bb381781ab5baf0147",
+"assets/assets/images/alexvsvirus.jpg": "25ade045dbb1b0c1c6ade2e1226aaaa8",
 "assets/assets/images/trigomath.webp": "ed5463bed7b017ca9d11f3ce730036f0",
 "assets/assets/images/lp_image.png": "5aad4d4216174954f5228d7d268546e8",
 "assets/assets/images/icon_App%2520Store%2520%255Binverse%255D.png": "6a523fe3b15df78b9728971fb56fc60a",
 "assets/assets/images/image%2520rara.jpg": "7bccd71d450b92adea10983fd18ba9f1",
-"assets/assets/images/alexvsvirus.webp": "ebb7e7a553133b8ba6dfcbb60f9791c0"
+"assets/assets/images/alexvsvirus.webp": "ebb7e7a553133b8ba6dfcbb60f9791c0",
+"assets/assets/images/endlessbeats.jpg": "7441bad299e647cc5e8a691c52953d6e"
 };
 
 // The application shell files that are downloaded before a service worker can
