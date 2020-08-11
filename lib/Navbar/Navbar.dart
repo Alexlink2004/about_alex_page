@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // This Webpage was created by Alejandro Apodaca Cordova in Mexicali, BC, Mexico,
 // please give me a star in github: https://github.com/Alexlink2004/about_alex_page.
@@ -84,35 +85,49 @@ class MobileNavbar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Container(
-        child: Column(children: <Widget>[
-          Text(
-            "Alejandro Apodaca",
-            style: TextStyle(
-                fontWeight: FontWeight.bold, color: Colors.white, fontSize: 30),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(
-                  width: 30,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Column(children: <Widget>[
+              Text(
+                "Alejandro Apodaca",
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                    fontSize: 30),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(12.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Text(
+                      "Acerca de mi",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    SizedBox(
+                      width: 30,
+                    ),
+                    Text(
+                      "Portafolio",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ],
                 ),
-                Text(
-                  "Acerca de mi",
-                  style: TextStyle(color: Colors.white),
-                ),
-                SizedBox(
-                  width: 30,
-                ),
-                Text(
-                  "Portafolio",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
+              )
+            ]),
+            GestureDetector(
+              onTap: () => launch('https://github.com/Alexlink2004'),
+              child: Image.asset(
+                'assets/images/github.png',
+                scale: 6,
+              ),
             ),
-          )
-        ]),
+          ],
+        ),
       ),
     );
   }

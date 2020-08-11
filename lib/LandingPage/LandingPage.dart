@@ -34,19 +34,38 @@ class _LandingPageState extends State<LandingPage> {
     }
   }
 
+  bool isLargeDisplay(constraints) {
+    if (constraints.maxWidth < 650) {
+      isLarge = false;
+      return false;
+    } else if (constraints.maxWidth >= 650 && constraints.maxWidth < 900) {
+      isLarge = true;
+      return true;
+    } else if (constraints.maxWidth > 900 && constraints.maxWidth < 1300) {
+      isLarge = true;
+      return true;
+    } else if (constraints.maxWidth >= 1300) {
+      isLarge = true;
+      return true;
+    } else {
+      return true;
+    }
+  }
+
   String header = 'Historial de software:';
-  bool isLarge = false;
+  bool isLarge;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return LayoutBuilder(
       builder: (context, constraints) {
+        getNumberOfRows(constraints);
 //        if (constraints.maxWidth > 650) {
         return Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment:
-              isLarge ? CrossAxisAlignment.center : CrossAxisAlignment.center,
+          isLarge ? CrossAxisAlignment.center : CrossAxisAlignment.center,
           children: [
             Card(
               elevation: 4.0,
@@ -75,9 +94,13 @@ class _LandingPageState extends State<LandingPage> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 40.0),
                       child: AutoSizeText(
-                        'Hola, mi nombre es Alejandro Apodaca, soy Estudiante de bachillerato entusiasta y autodidacta en programación y automatización, apasionado por el desarrollo de soluciones prácticas especialmente en aquellas que ayudan a las personas a mejorar su calidad de vida.',
-                        style: TextStyle(fontSize: 60, color: Colors.white),
-                        maxLines: !isLarge ? 8 : 6,
+                        'Hola, mi nombre es Alejandro Apodaca, soy Estudiante de bachillerato entusiasta y autodidacta en programación y automatización, apasionado por el desarrollo de soluciones prácticas especialmente en aquellas que ayudan a las personas a mejorar su vida.',
+                        style: TextStyle(
+                            fontSize: 60,
+                            color: Colors.white,
+                            wordSpacing: 2,
+                            height: 1.20),
+                        maxLines: !isLarge ? 6 : 6,
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -125,32 +148,52 @@ class PortfolioBuilder extends StatelessWidget {
   });
 
   final int numberOfRows;
-  final bool isLarge;
+  bool isLarge;
   final constraints;
+
+  bool isLargeDisplay(constraints) {
+    if (constraints.maxWidth < 650) {
+      isLarge = false;
+      return false;
+    } else if (constraints.maxWidth >= 650 && constraints.maxWidth < 900) {
+      isLarge = true;
+      return true;
+    } else if (constraints.maxWidth > 900 && constraints.maxWidth < 1300) {
+      isLarge = true;
+      return true;
+    } else if (constraints.maxWidth >= 1300) {
+      isLarge = true;
+      return true;
+    } else {
+      return true;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return isLarge
         ? GridView.builder(
-      shrinkWrap: true,
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: numberOfRows,
-      ),
-      itemCount: portfolioItems.length,
-      itemBuilder: (context, index) {
-        return PortfolioItemWidget(
-          constraints: constraints,
-          title: portfolioItems[index].title,
-          subtitle: portfolioItems[index].subtitle,
-          image: portfolioItems[index].image,
-          icon1: portfolioItems[index].icon1,
-          icon2: portfolioItems[index].icon2,
-          isAppStore: portfolioItems[index].isAppStore(),
-          linkAppStore: portfolioItems[index].linkAppStore,
-          linkGooglePlay: portfolioItems[index].linkGooglePlay,
-        );
-      },
-    )
+            shrinkWrap: true,
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: numberOfRows,
+            ),
+            itemCount: portfolioItems.length,
+            itemBuilder: (context, index) {
+              return PortfolioItemWidget(
+                constraints: constraints,
+                title: portfolioItems[index].title,
+                subtitle: portfolioItems[index].subtitle,
+                image: portfolioItems[index].image,
+                icon1: portfolioItems[index].icon1,
+                icon2: portfolioItems[index].icon2,
+                isAppStore: portfolioItems[index].isAppStore(),
+                linkAppStore: portfolioItems[index].linkAppStore,
+                linkGooglePlay: portfolioItems[index].linkGooglePlay,
+                isLarge: isLarge,
+                description: portfolioItems[index].description,
+              );
+            },
+          )
         : SingleChildScrollView(
       child: ListView.builder(
         physics: const NeverScrollableScrollPhysics(),
@@ -158,6 +201,7 @@ class PortfolioBuilder extends StatelessWidget {
         itemCount: portfolioItems.length,
         itemBuilder: (context, index) {
           return PortfolioItemWidget(
+            isLarge: isLarge,
             constraints: constraints,
             title: portfolioItems[index].title,
             subtitle: portfolioItems[index].subtitle,

@@ -51,7 +51,7 @@ List<PortfolioItem> portfolioItems = [
     image: Image.network(
         'https://lh3.googleusercontent.com/aynFiHgvTqoWPgQ5LB81d8WqrRkVgzbhiFheiEC--IcO6evRpcFt--e7HAK2g9i6OU6j=s180-rw'),
     linkGooglePlay:
-    'https://play.google.com/store/apps/details?id=com.apodaca.game&hl=en',
+        'https://play.google.com/store/apps/details?id=com.apodaca.game&hl=en',
     linkAppStore:
     'https://apps.apple.com/us/app/endless-beats/id1524127084#?platform=iphone',
     description:
