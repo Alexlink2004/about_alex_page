@@ -53,7 +53,7 @@ List<PortfolioItem> portfolioItems = [
     linkAppStore:
         'https://apps.apple.com/us/app/endless-beats/id1524127084#?platform=iphone',
     description:
-    'Endless Beats es un videojuego ritmico en el cual el proposito es no tocar los hexagonos y durar el mayor tiempo posible para desbloquear personajes.',
+        'Endless Beats es un videojuego ritmico en el cual el proposito es no tocar los hexagonos y durar el mayor tiempo posible para desbloquear personajes.',
   ),
   PortfolioItem(
     title: 'Tri-Go Math',

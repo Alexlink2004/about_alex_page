@@ -40,10 +40,6 @@ class DesktopNavbar extends StatelessWidget {
             ),
             Row(
               children: <Widget>[
-                Text(
-                  "Home",
-                  style: TextStyle(color: Colors.white),
-                ),
                 SizedBox(
                   width: 30,
                 ),
@@ -54,10 +50,12 @@ class DesktopNavbar extends StatelessWidget {
                 SizedBox(
                   width: 30,
                 ),
+
                 Text(
                   "Portafolio",
                   style: TextStyle(color: Colors.white),
                 ),
+
                 SizedBox(
                   width: 30,
                 ),

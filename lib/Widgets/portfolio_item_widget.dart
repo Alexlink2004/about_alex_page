@@ -144,9 +144,9 @@ class PortfolioItemWidget extends StatelessWidget {
 //                          trailing: Icon(icon1),
 //                          leading: image,
 //                        ),
-                ],
-              ),
-            )).show(),
+                    ],
+                  ),
+                )).show(),
         child: ClipPath(
           clipper: !isLarge ? ObjectClipper() : null,
           child: Container(

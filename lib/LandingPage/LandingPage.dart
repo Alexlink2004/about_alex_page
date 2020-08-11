@@ -72,7 +72,7 @@ class _LandingPageState extends State<LandingPage> {
               color: Color(0x66ffffff),
               child: Container(
                 width: !isLarge ? size.width : 700,
-                height: size.height * .7,
+                height: 500,
                 child: Column(
 //                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -98,9 +98,9 @@ class _LandingPageState extends State<LandingPage> {
                         style: TextStyle(
                           color: Colors.white,
                           height: 1,
-                          fontSize: 70,
+                          fontSize: 60,
                         ),
-                        maxLines: !isLarge ? 8 : 6,
+                        maxLines: !isLarge ? 7 : 6,
                         textAlign: TextAlign.center,
                       ),
                     ),
@@ -195,27 +195,27 @@ class PortfolioBuilder extends StatelessWidget {
             },
           )
         : SingleChildScrollView(
-      child: ListView.builder(
-        physics: const NeverScrollableScrollPhysics(),
-        shrinkWrap: true,
-        itemCount: portfolioItems.length,
-        itemBuilder: (context, index) {
-          return PortfolioItemWidget(
-            isLarge: isLarge,
-            constraints: constraints,
-            title: portfolioItems[index].title,
-            subtitle: portfolioItems[index].subtitle,
-            image: portfolioItems[index].image,
-            icon1: portfolioItems[index].icon1,
-            icon2: portfolioItems[index].icon2,
-            isAppStore: portfolioItems[index].isAppStore(),
-            linkAppStore: portfolioItems[index].linkAppStore,
-            linkGooglePlay: portfolioItems[index].linkGooglePlay,
-            description: portfolioItems[index].description,
+            child: ListView.builder(
+              physics: const NeverScrollableScrollPhysics(),
+              shrinkWrap: true,
+              itemCount: portfolioItems.length,
+              itemBuilder: (context, index) {
+                return PortfolioItemWidget(
+                  isLarge: isLarge,
+                  constraints: constraints,
+                  title: portfolioItems[index].title,
+                  subtitle: portfolioItems[index].subtitle,
+                  image: portfolioItems[index].image,
+                  icon1: portfolioItems[index].icon1,
+                  icon2: portfolioItems[index].icon2,
+                  isAppStore: portfolioItems[index].isAppStore(),
+                  linkAppStore: portfolioItems[index].linkAppStore,
+                  linkGooglePlay: portfolioItems[index].linkGooglePlay,
+                  description: portfolioItems[index].description,
+                );
+              },
+            ),
           );
-        },
-      ),
-    );
   }
 }
 
