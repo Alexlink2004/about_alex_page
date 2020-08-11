@@ -36,7 +36,7 @@ List<PortfolioItem> portfolioItems = [
   PortfolioItem(
     title: 'Alex vs virus',
     subtitle: 'Videojuego',
-    image: Image.asset('assets/images/alexvsvirus.webp'),
+    image: Image.asset('assets/images/alexvsvirus.jpg'),
     icon1: Icons.android,
     icon2: Icons.backup,
     linkGooglePlay:
@@ -47,7 +47,7 @@ List<PortfolioItem> portfolioItems = [
   PortfolioItem(
     title: 'Endless Beats',
     subtitle: 'Videojuego',
-    image: Image.asset('assets/images/Endless.webp'),
+    image: Image.asset('assets/images/endlessbeats.jpg'),
     linkGooglePlay:
         'https://play.google.com/store/apps/details?id=com.apodaca.game&hl=en',
     linkAppStore:
@@ -58,9 +58,9 @@ List<PortfolioItem> portfolioItems = [
   PortfolioItem(
     title: 'Tri-Go Math',
     subtitle: 'Aplicacion',
-    image: Image.asset('assets/images/trigomath.webp'),
+    image: Image.asset('assets/images/trigomath.jpg'),
     linkGooglePlay:
-    'https://play.google.com/store/apps/details?id=com.apodaca.math_helper&hl=en',
+        'https://play.google.com/store/apps/details?id=com.apodaca.math_helper&hl=en',
     linkAppStore: 'https://apps.apple.com/us/app/tri-go-math/id1525513476',
     description:
     'Tri-Go Math es una app en desarrollo en el cual el proposito principal es ayudar a estudiantes a realizar su tarea de manera mas eficaz, incluyendo temas de trigonometria, geometria y conversiones.',
