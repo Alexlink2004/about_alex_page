@@ -62,7 +62,24 @@ class PortfolioItemWidget extends StatelessWidget {
                           AutoSizeText(
                             title,
                             maxLines: 1,
-                            style: TextStyle(fontSize: 30),
+                            style: TextStyle(
+                              fontSize: 40,
+                              color: Colors.white,
+                            ),
+                          ),
+                          Card(
+                            color: Color(0x66ffffff),
+                            child: Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: AutoSizeText(
+                                description,
+                                maxLines: 5,
+                                style: TextStyle(
+                                  fontSize: 30,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
                           ),
 //                        ListTile(
 //                          title: Text(title),

@@ -10,6 +10,7 @@ class PortfolioItem {
     this.icon2 = Icons.phone_android,
     this.linkAppStore,
     this.linkGooglePlay,
+    this.description,
   });
 
   String title;
@@ -20,6 +21,7 @@ class PortfolioItem {
   Image image;
   IconData icon1;
   IconData icon2;
+  String description;
 
   bool isAppStore() {
     if (linkAppStore == null) {
@@ -32,14 +34,17 @@ class PortfolioItem {
 
 List<PortfolioItem> portfolioItems = [
   PortfolioItem(
-      title: 'Alex vs virus',
-      subtitle: 'Videojuego',
-      image: Image.network(
-          'https://lh3.googleusercontent.com/pKT453nwT0PMPJWkhteh0j8LIoHA4eT7UJ6hZZW3tjxUGO8gfUrc2Mk4Pr5uVepbmWdI=s180-rw'),
-      icon1: Icons.android,
-      icon2: Icons.backup,
-      linkGooglePlay:
-          'https://play.google.com/store/apps/details?id=com.apodaca.app&hl=en'),
+    title: 'Alex vs virus',
+    subtitle: 'Videojuego',
+    image: Image.network(
+        'https://lh3.googleusercontent.com/pKT453nwT0PMPJWkhteh0j8LIoHA4eT7UJ6hZZW3tjxUGO8gfUrc2Mk4Pr5uVepbmWdI=s180-rw'),
+    icon1: Icons.android,
+    icon2: Icons.backup,
+    linkGooglePlay:
+        'https://play.google.com/store/apps/details?id=com.apodaca.app&hl=en',
+    description:
+        'Alex vs Virus es un videojuego arcade en el cual el objetivo es esquivar los obstaculos que se presenten y llegar lo mas lejos posible',
+  ),
   PortfolioItem(
     title: 'Endless Beats',
     subtitle: 'Videojuego',
@@ -49,15 +54,20 @@ List<PortfolioItem> portfolioItems = [
     'https://play.google.com/store/apps/details?id=com.apodaca.game&hl=en',
     linkAppStore:
     'https://apps.apple.com/us/app/endless-beats/id1524127084#?platform=iphone',
+    description:
+    'Endless Beats es un videojuego ritmico en el cual el proposito es no tocar los hexagonos y durar el mayor tiempo posible para desbloquear personajes.',
   ),
   PortfolioItem(
-      title: 'Tri-Go Math',
-      subtitle: 'Aplicacion',
-      image: Image.network(
-          'https://lh3.googleusercontent.com/ilouuYQ_h6BCwtW6yDiXk_pFfKNn0CEQjxmngtFxT48_TN-Fe7ZVuos0iVEiFHpAGQ=s180-rw'),
-      linkGooglePlay:
-      'https://play.google.com/store/apps/details?id=com.apodaca.math_helper&hl=en',
-      linkAppStore: 'https://apps.apple.com/us/app/tri-go-math/id1525513476'),
+    title: 'Tri-Go Math',
+    subtitle: 'Aplicacion',
+    image: Image.network(
+        'https://lh3.googleusercontent.com/ilouuYQ_h6BCwtW6yDiXk_pFfKNn0CEQjxmngtFxT48_TN-Fe7ZVuos0iVEiFHpAGQ=s180-rw'),
+    linkGooglePlay:
+    'https://play.google.com/store/apps/details?id=com.apodaca.math_helper&hl=en',
+    linkAppStore: 'https://apps.apple.com/us/app/tri-go-math/id1525513476',
+    description:
+    'Tri-Go Math es una app en desarrollo en el cual el proposito principal es ayudar a estudiantes a realizar su tarea de manera mas eficaz, incluyendo temas de trigonometria, geometria y conversiones.',
+  ),
 ];
 
 //GridView.builder(
@@ -65,3 +75,7 @@ List<PortfolioItem> portfolioItems = [
 //SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 5),
 //itemBuilder: (context, index) {},
 //)
+
+// This Webpage was created by Alejandro Apodaca Cordova in Mexicali, BC, Mexico,
+// please give me a star in github: https://github.com/Alexlink2004/about_alex_page.
+// Follow me on twitter: @AlexApo26

@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_webpage/LandingPage/LandingPage.dart';
 import 'package:flutter_webpage/Navbar/Navbar.dart';
 
+// This Webpage was created by Alejandro Apodaca Cordova in Mexicali, BC, Mexico,
+// please give me a star in github: https://github.com/Alexlink2004/about_alex_page.
+// Follow me on twitter: @AlexApo26
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -48,3 +52,7 @@ class MyHomePage extends StatelessWidget {
     );
   }
 }
+
+// This Webpage was created by Alejandro Apodaca Cordova in Mexicali, BC, Mexico,
+// please give me a star in github: https://github.com/Alexlink2004/about_alex_page.
+// Follow me on twitter: @AlexApo26

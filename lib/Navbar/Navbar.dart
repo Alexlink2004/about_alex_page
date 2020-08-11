@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+// This Webpage was created by Alejandro Apodaca Cordova in Mexicali, BC, Mexico,
+// please give me a star in github: https://github.com/Alexlink2004/about_alex_page.
+// Follow me on twitter: @AlexApo26
 class Navbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -114,3 +117,7 @@ class MobileNavbar extends StatelessWidget {
     );
   }
 }
+
+// This Webpage was created by Alejandro Apodaca Cordova in Mexicali, BC, Mexico,
+// please give me a star in github: https://github.com/Alexlink2004/about_alex_page.
+// Follow me on twitter: @AlexApo26
