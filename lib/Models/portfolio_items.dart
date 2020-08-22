@@ -63,7 +63,7 @@ List<PortfolioItem> portfolioItems = [
         'https://play.google.com/store/apps/details?id=com.apodaca.math_helper&hl=en',
     linkAppStore: 'https://apps.apple.com/us/app/tri-go-math/id1525513476',
     description:
-    'Tri-Go Math es una app en desarrollo en el cual el proposito principal es ayudar a estudiantes a realizar su tarea de manera mas eficaz, incluyendo temas de trigonometria, geometria y conversiones.',
+        'Tri-Go Math es una app en desarrollo en el cual el proposito principal es ayudar a estudiantes a realizar su tarea de manera mas eficaz, incluyendo temas de trigonometria, geometria y conversiones.',
   ),
 ];
 

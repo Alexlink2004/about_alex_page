@@ -25,7 +25,7 @@ class PortfolioItemWidget extends StatelessWidget {
   final IconData icon1;
   final IconData icon2;
   final bool isLarge;
-  final constraints;
+  final BoxConstraints constraints;
   final bool isAppStore;
   final String linkAppStore;
   final String linkGooglePlay;
@@ -147,72 +147,75 @@ class PortfolioItemWidget extends StatelessWidget {
                     ],
                   ),
                 )).show(),
-        child: ClipPath(
-          clipper: !isLarge ? ObjectClipper() : null,
-          child: Container(
-            decoration: BoxDecoration(
-              color: Color(0x66000000),
-              borderRadius: isLarge
-                  ? BorderRadius.circular(30)
-                  : BorderRadius.circular(0),
-            ),
-            child: !isLarge
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Container(
-                        width: constraints.maxWidth,
-                        height: size.height / 2,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Row(
-                              children: [
-                                ClipOval(child: image),
-                                SizedBox(
-                                  width: 20.0,
-                                ),
-                                AutoSizeText(
-                                  title,
-                                  maxLines: 1,
-                                  style: TextStyle(
-                                      fontSize: size.width * 0.06,
-                                      color: Colors.white),
-                                ),
-                              ],
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                isAppStore
-                                    ? GestureDetector(
-                                        onTap: () => launch(linkAppStore),
-                                        child: Image.asset(
-                                          'assets/images/icon_App Store [inverse].png',
-                                          scale: 8,
-                                          color: Colors.white,
-                                        ),
-                                      )
-                                    : SizedBox(),
-                                SizedBox(
-                                  width: 10.0,
-                                  height: 100,
-                                ),
-                                GestureDetector(
-                                  onTap: () => launch(linkGooglePlay),
-                                  child: Image.asset(
-                                    'assets/images/icon_Google Play (monochrome) [inverse].png',
-                                    scale: 8,
-                                    color: Colors.white,
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Material(
+            borderRadius: BorderRadius.circular(50),
+            elevation: 5,
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: isLarge
+                    ? BorderRadius.circular(30)
+                    : BorderRadius.circular(0),
+              ),
+              child: !isLarge
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: size.width,
+                          height: size.height / 2,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Row(
+                                children: [
+                                  ClipOval(child: image),
+                                  SizedBox(
+                                    width: 20.0,
                                   ),
-                                ),
-                              ],
-                            ),
-                          ],
+                                  AutoSizeText(
+                                    title,
+                                    maxLines: 1,
+                                    style: TextStyle(
+                                        fontSize: size.width * 0.06,
+                                        color: Colors.black),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  isAppStore
+                                      ? GestureDetector(
+                                          onTap: () => launch(linkAppStore),
+                                          child: Image.asset(
+                                            'assets/images/icon_App Store [inverse].png',
+                                            scale: 8,
+                                            color: Colors.black,
+                                          ),
+                                        )
+                                      : SizedBox(),
+                                  SizedBox(
+                                    width: 10.0,
+                                    height: 100,
+                                  ),
+                                  GestureDetector(
+                                    onTap: () => launch(linkGooglePlay),
+                                    child: Image.asset(
+                                      'assets/images/icon_Google Play (monochrome) [inverse].png',
+                                      scale: 8,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
-                  )
+                      ],
+                    )
 //          ListTile(
 //                  leading: ClipOval(child: image),
 //                  title: Text(
@@ -230,46 +233,47 @@ class PortfolioItemWidget extends StatelessWidget {
 //                        )
 //                      : Material(),
 //                )
-                : Row(
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          decoration: BoxDecoration(
-                            color: Color(0xd000000),
-                            borderRadius: BorderRadius.horizontal(
-                              left: Radius.circular(30),
-                            ),
-                          ),
-                          child: Center(child: ClipOval(child: image)),
+                  : Row(
+                children: [
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Color(0xd000000),
+                        borderRadius: BorderRadius.horizontal(
+                          left: Radius.circular(30),
                         ),
                       ),
-                      Expanded(
-                        flex: 2,
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            crossAxisAlignment: CrossAxisAlignment.end,
-                            children: [
-                              Material(),
-                              AutoSizeText(
-                                title,
-                                style: kColorTextStyle.copyWith(
-                                    fontSize: size.width * 0.04),
-                                maxLines: 1,
-                              ),
-                              Text(
-                                subtitle,
-                                style: kColorTextStyle.copyWith(
-                                    fontSize: size.width * 0.02),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
+                      child: Center(child: ClipOval(child: image)),
+                    ),
                   ),
+                  Expanded(
+                    flex: 2,
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Material(),
+                          AutoSizeText(
+                            title,
+                            style: kColorTextStyle.copyWith(
+                                fontSize: size.width * 0.04),
+                            maxLines: 1,
+                          ),
+                          Text(
+                            subtitle,
+                            style: kColorTextStyle.copyWith(
+                                fontSize: size.width * 0.02),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),

@@ -13,7 +13,7 @@ class Navbar extends StatelessWidget {
         if (constraints.maxWidth > 1200) {
           return DesktopNavbar();
         } else if (constraints.maxWidth > 800 && constraints.maxWidth < 1200) {
-          return DesktopNavbar();
+          return MobileNavbar();
         } else {
           return MobileNavbar();
         }
@@ -31,12 +31,25 @@ class DesktopNavbar extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(
-              "Alejandro Apodaca",
-              style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                  fontSize: 30),
+            Row(
+              children: [
+                ClipOval(
+                  child: Image.network(
+                    'https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/118069686_109531690866597_6811113650699708854_n.png?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=9FNOjFR7wjkAX9u20Z6&_nc_ht=scontent-dfw5-1.xx&oh=b6337e775703988ae06fa7cefe8ed14e&oe=5F6755F0',
+                    scale: 7,
+                  ),
+                ),
+                SizedBox(
+                  width: 13,
+                ),
+                Text(
+                  "ApoApps",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 30),
+                ),
+              ],
             ),
             Row(
               children: <Widget>[
@@ -45,7 +58,7 @@ class DesktopNavbar extends StatelessWidget {
                 ),
                 Text(
                   "Acerca de mi",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.black),
                 ),
                 SizedBox(
                   width: 30,
@@ -53,7 +66,7 @@ class DesktopNavbar extends StatelessWidget {
 
                 Text(
                   "Portafolio",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(color: Colors.black),
                 ),
 
                 SizedBox(
@@ -93,56 +106,56 @@ class MobileNavbar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Container(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            ClipOval(
+              child: Image.network(
+                'https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/118069686_109531690866597_6811113650699708854_n.png?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=9FNOjFR7wjkAX9u20Z6&_nc_ht=scontent-dfw5-1.xx&oh=b6337e775703988ae06fa7cefe8ed14e&oe=5F6755F0',
+                scale: 9,
+              ),
+            ),
+            SizedBox(
+              width: 20,
+            ),
             Flexible(
               flex: 4,
               child: Column(children: <Widget>[
                 AutoSizeText(
-                  "Alejandro Apodaca",
+                  "ApoApps",
                   maxLines: 1,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Colors.black,
                     fontSize: 30,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      SizedBox(
-                        width: 30,
-                      ),
-                      AutoSizeText(
-                        "Acerca de mi",
-                        style: TextStyle(color: Colors.white),
-                        softWrap: true,
-                      ),
-                      SizedBox(
-                        width: 30,
-                      ),
-                      AutoSizeText(
-                        "Portafolio",
-                        overflow: TextOverflow.visible,
-                        style: TextStyle(color: Colors.white),
-                        softWrap: true,
-                      ),
-                    ],
-                  ),
-                )
+
+//                Padding(
+//                  padding: const EdgeInsets.all(8.0),
+//                  child: Row(
+//                    mainAxisAlignment: MainAxisAlignment.center,
+//                    children: <Widget>[
+//                      SizedBox(
+//                        width: 30,
+//                      ),
+//                      AutoSizeText(
+//                        "Acerca de mi",
+//                        style: TextStyle(color: Colors.black),
+//                        softWrap: true,
+//                      ),
+//                      SizedBox(
+//                        width: 30,
+//                      ),
+//                      AutoSizeText(
+//                        "Portafolio",
+//                        overflow: TextOverflow.visible,
+//                        style: TextStyle(color: Colors.black),
+//                        softWrap: true,
+//                      ),
+//                    ],
+//                  ),
+//                )
               ]),
-            ),
-            Flexible(
-              flex: 1,
-              child: GestureDetector(
-                onTap: () => launch('https://github.com/Alexlink2004'),
-                child: Image.asset(
-                  'assets/images/github.png',
-                  scale: 6,
-                ),
-              ),
             ),
           ],
         ),
