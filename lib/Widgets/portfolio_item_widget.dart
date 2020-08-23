@@ -5,22 +5,25 @@ import 'package:flutter_webpage/constants.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PortfolioItemWidget extends StatelessWidget {
-  PortfolioItemWidget(
-      {this.image,
-      this.title,
-      this.subtitle,
-      this.icon2,
-      this.icon1,
-      this.isLarge,
-      this.description,
-      this.constraints,
-      this.isAppStore,
-      this.linkAppStore,
-      this.linkGooglePlay});
+  PortfolioItemWidget({
+    this.bannerImage,
+    this.title,
+    this.subtitle,
+    this.icon2,
+    this.icon1,
+    this.isLarge,
+    this.description,
+    this.constraints,
+    this.isAppStore,
+    this.linkAppStore,
+    this.linkGooglePlay,
+    this.icon,
+  });
 
   final String title;
   final String description;
-  final Image image;
+  final String bannerImage;
+  final Image icon;
   final String subtitle;
   final IconData icon1;
   final IconData icon2;
@@ -40,9 +43,11 @@ class PortfolioItemWidget extends StatelessWidget {
           context,
           MaterialPageRoute(
             builder: (context) => AboutPage(
-              icon: image,
+              bannerImage: bannerImage,
               title: title,
               description: description,
+              icon: icon,
+              isLarge: isLarge,
             ),
           ),
         ),
@@ -70,7 +75,7 @@ class PortfolioItemWidget extends StatelessWidget {
                             children: [
                               Row(
                                 children: [
-                                  ClipOval(child: image),
+                                  ClipOval(child: icon),
                                   SizedBox(
                                     width: 20.0,
                                   ),
@@ -133,45 +138,45 @@ class PortfolioItemWidget extends StatelessWidget {
 //                      : Material(),
 //                )
                   : Row(
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Color(0xd000000),
-                        borderRadius: BorderRadius.horizontal(
-                          left: Radius.circular(30),
+                      children: [
+                        Expanded(
+                          flex: 1,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Color(0xd000000),
+                              borderRadius: BorderRadius.horizontal(
+                                left: Radius.circular(30),
+                              ),
+                            ),
+                            child: Center(child: ClipOval(child: icon)),
+                          ),
                         ),
-                      ),
-                      child: Center(child: ClipOval(child: image)),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Material(),
-                          AutoSizeText(
-                            title,
-                            style: kColorTextStyle.copyWith(
-                                fontSize: size.width * 0.04),
-                            maxLines: 1,
+                        Expanded(
+                          flex: 2,
+                          child: Padding(
+                            padding: const EdgeInsets.all(16.0),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Material(),
+                                AutoSizeText(
+                                  title,
+                                  style: kColorTextStyle.copyWith(
+                                      fontSize: size.width * 0.04),
+                                  maxLines: 1,
+                                ),
+                                Text(
+                                  subtitle,
+                                  style: kColorTextStyle.copyWith(
+                                      fontSize: size.width * 0.02),
+                                ),
+                              ],
+                            ),
                           ),
-                          Text(
-                            subtitle,
-                            style: kColorTextStyle.copyWith(
-                                fontSize: size.width * 0.02),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
             ),
           ),
         ),

@@ -11,7 +11,7 @@ class PortfolioItem {
     this.linkAppStore,
     this.linkGooglePlay,
     this.description,
-    this.images,
+    this.bannerImage,
     this.id,
   });
 
@@ -24,7 +24,7 @@ class PortfolioItem {
   IconData icon1;
   IconData icon2;
   String description;
-  List<Widget> images;
+  String bannerImage;
   int id;
 
   bool isAppStore() {
@@ -45,36 +45,34 @@ List<PortfolioItem> portfolioItems = [
         'https://play.google.com/store/apps/details?id=com.apodaca.math_helper&hl=en',
     linkAppStore: 'https://apps.apple.com/us/app/tri-go-math/id1525513476',
     description:
-    'Tri-Go Math es una app en desarrollo en el cual el proposito principal es ayudar a estudiantes a realizar su tarea de manera mas eficaz, incluyendo temas de trigonometria, geometria y conversiones.',
-    images: [
-      Image.network(
-          'https://image.winudf.com/v2/image1/Y29tLmFwb2RhY2EubWF0aF9oZWxwZXJfc2NyZWVuXzBfMTU5NjM4NDkxOV8wNDY/screen-0.jpg?fakeurl=1&type=.jpg'),
-      Image.network(
-          'https://image.winudf.com/v2/image1/Y29tLmFwb2RhY2EubWF0aF9oZWxwZXJfc2NyZWVuXzBfMTU5NjM4NDkxOV8wNDY/screen-0.jpg?fakeurl=1&type=.jpg'),
-    ],
+        'Tri-Go Math es una app en desarrollo en el cual el proposito principal es ayudar a estudiantes a realizar su tarea de manera mas eficaz, incluyendo temas de trigonometria, geometria y conversiones.',
+    bannerImage:
+        'https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-0/p526x296/118146389_109635030856263_621810343185238189_o.jpg?_nc_cat=111&_nc_sid=730e14&_nc_ohc=k7gqEKKoclMAX9sZICy&_nc_ht=scontent-dfw5-1.xx&_nc_tp=6&oh=40516679f98bbf600aafa63893a40781&oe=5F688D44',
   ),
   PortfolioItem(
-    title: 'Endless Beats',
-    subtitle: 'Videojuego',
-    image: Image.asset('assets/images/endlessbeats.jpg'),
-    linkGooglePlay:
-        'https://play.google.com/store/apps/details?id=com.apodaca.game&hl=en',
-    linkAppStore:
-        'https://apps.apple.com/us/app/endless-beats/id1524127084#?platform=iphone',
-    description:
-        'Endless Beats es un videojuego ritmico en el cual el proposito es no tocar los hexagonos y durar el mayor tiempo posible para desbloquear personajes.',
-  ),
+      title: 'Endless Beats',
+      subtitle: 'Videojuego',
+      image: Image.asset('assets/images/endlessbeats.jpg'),
+      linkGooglePlay:
+      'https://play.google.com/store/apps/details?id=com.apodaca.game&hl=en',
+      linkAppStore:
+      'https://apps.apple.com/us/app/endless-beats/id1524127084#?platform=iphone',
+      description:
+      'Endless Beats es un videojuego ritmico en el cual el proposito es no tocar los hexagonos y durar el mayor tiempo posible para desbloquear personajes.',
+      bannerImage:
+      'https://img.itch.zone/aW1nLzMyNzEwNDcuanBn/original/v7pxGs.jpg'),
   PortfolioItem(
-    title: 'Alex vs virus',
-    subtitle: 'Videojuego',
-    image: Image.asset('assets/images/alexvsvirus.jpg'),
-    icon1: Icons.android,
-    icon2: Icons.backup,
-    linkGooglePlay:
-    'https://play.google.com/store/apps/details?id=com.apodaca.app&hl=en',
-    description:
-    'Alex vs Virus es un videojuego arcade en el cual el objetivo es esquivar los obstaculos que se presenten y llegar lo mas lejos posible',
-  ),
+      title: 'Alex vs virus',
+      subtitle: 'Videojuego',
+      image: Image.asset('assets/images/alexvsvirus.jpg'),
+      icon1: Icons.android,
+      icon2: Icons.backup,
+      linkGooglePlay:
+      'https://play.google.com/store/apps/details?id=com.apodaca.app&hl=en',
+      description:
+      'Alex vs Virus es un videojuego arcade en el cual el objetivo es esquivar los obstaculos que se presenten y llegar lo mas lejos posible',
+      bannerImage:
+      'https://img.itch.zone/aW1nLzQxMTIwOTcuanBn/original/yVSYjW.jpg'),
 ];
 
 //GridView.builder(

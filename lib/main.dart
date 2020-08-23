@@ -43,6 +43,7 @@ class MyHomePage extends StatelessWidget {
       key: scaffoldKey,
       endDrawer: PageDrawer(),
       body: Container(
+        color: Color(0x66ffffff),
         height: double.infinity,
         child: LandingPage(),
       ),

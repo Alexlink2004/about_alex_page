@@ -135,7 +135,7 @@ class PortfolioBuilder extends StatelessWidget {
                 constraints: constraints,
                 title: portfolioItems[index].title,
                 subtitle: portfolioItems[index].subtitle,
-                image: portfolioItems[index].image,
+                bannerImage: portfolioItems[index].bannerImage,
                 icon1: portfolioItems[index].icon1,
                 icon2: portfolioItems[index].icon2,
                 isAppStore: portfolioItems[index].isAppStore(),
@@ -143,6 +143,7 @@ class PortfolioBuilder extends StatelessWidget {
                 linkGooglePlay: portfolioItems[index].linkGooglePlay,
                 isLarge: isLarge,
                 description: portfolioItems[index].description,
+                icon: portfolioItems[index].image,
               );
             },
           )
@@ -156,13 +157,14 @@ class PortfolioBuilder extends StatelessWidget {
                 constraints: constraints,
                 title: portfolioItems[index].title,
                 subtitle: portfolioItems[index].subtitle,
-                image: portfolioItems[index].image,
+                bannerImage: portfolioItems[index].bannerImage,
                 icon1: portfolioItems[index].icon1,
                 icon2: portfolioItems[index].icon2,
                 isAppStore: portfolioItems[index].isAppStore(),
                 linkAppStore: portfolioItems[index].linkAppStore,
                 linkGooglePlay: portfolioItems[index].linkGooglePlay,
                 description: portfolioItems[index].description,
+                icon: portfolioItems[index].image,
               );
             },
           );

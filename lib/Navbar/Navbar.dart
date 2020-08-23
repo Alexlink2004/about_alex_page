@@ -142,6 +142,7 @@ class MobileNavbar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Container(
+        color: Color(0x66ffffff),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
