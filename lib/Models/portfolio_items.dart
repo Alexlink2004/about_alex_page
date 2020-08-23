@@ -11,6 +11,8 @@ class PortfolioItem {
     this.linkAppStore,
     this.linkGooglePlay,
     this.description,
+    this.images,
+    this.id,
   });
 
   String title;
@@ -22,6 +24,8 @@ class PortfolioItem {
   IconData icon1;
   IconData icon2;
   String description;
+  List<Widget> images;
+  int id;
 
   bool isAppStore() {
     if (linkAppStore == null) {
@@ -34,15 +38,20 @@ class PortfolioItem {
 
 List<PortfolioItem> portfolioItems = [
   PortfolioItem(
-    title: 'Alex vs virus',
-    subtitle: 'Videojuego',
-    image: Image.asset('assets/images/alexvsvirus.jpg'),
-    icon1: Icons.android,
-    icon2: Icons.backup,
+    title: 'Tri-Go Math',
+    subtitle: 'Aplicacion',
+    image: Image.asset('assets/images/trigomath.jpg'),
     linkGooglePlay:
-        'https://play.google.com/store/apps/details?id=com.apodaca.app&hl=en',
+        'https://play.google.com/store/apps/details?id=com.apodaca.math_helper&hl=en',
+    linkAppStore: 'https://apps.apple.com/us/app/tri-go-math/id1525513476',
     description:
-        'Alex vs Virus es un videojuego arcade en el cual el objetivo es esquivar los obstaculos que se presenten y llegar lo mas lejos posible',
+    'Tri-Go Math es una app en desarrollo en el cual el proposito principal es ayudar a estudiantes a realizar su tarea de manera mas eficaz, incluyendo temas de trigonometria, geometria y conversiones.',
+    images: [
+      Image.network(
+          'https://image.winudf.com/v2/image1/Y29tLmFwb2RhY2EubWF0aF9oZWxwZXJfc2NyZWVuXzBfMTU5NjM4NDkxOV8wNDY/screen-0.jpg?fakeurl=1&type=.jpg'),
+      Image.network(
+          'https://image.winudf.com/v2/image1/Y29tLmFwb2RhY2EubWF0aF9oZWxwZXJfc2NyZWVuXzBfMTU5NjM4NDkxOV8wNDY/screen-0.jpg?fakeurl=1&type=.jpg'),
+    ],
   ),
   PortfolioItem(
     title: 'Endless Beats',
@@ -56,14 +65,15 @@ List<PortfolioItem> portfolioItems = [
         'Endless Beats es un videojuego ritmico en el cual el proposito es no tocar los hexagonos y durar el mayor tiempo posible para desbloquear personajes.',
   ),
   PortfolioItem(
-    title: 'Tri-Go Math',
-    subtitle: 'Aplicacion',
-    image: Image.asset('assets/images/trigomath.jpg'),
+    title: 'Alex vs virus',
+    subtitle: 'Videojuego',
+    image: Image.asset('assets/images/alexvsvirus.jpg'),
+    icon1: Icons.android,
+    icon2: Icons.backup,
     linkGooglePlay:
-        'https://play.google.com/store/apps/details?id=com.apodaca.math_helper&hl=en',
-    linkAppStore: 'https://apps.apple.com/us/app/tri-go-math/id1525513476',
+    'https://play.google.com/store/apps/details?id=com.apodaca.app&hl=en',
     description:
-        'Tri-Go Math es una app en desarrollo en el cual el proposito principal es ayudar a estudiantes a realizar su tarea de manera mas eficaz, incluyendo temas de trigonometria, geometria y conversiones.',
+    'Alex vs Virus es un videojuego arcade en el cual el objetivo es esquivar los obstaculos que se presenten y llegar lo mas lejos posible',
   ),
 ];
 

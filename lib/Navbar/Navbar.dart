@@ -1,21 +1,40 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_webpage/main.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // This Webpage was created by Alejandro Apodaca Cordova in Mexicali, BC, Mexico,
 // please give me a star in github: https://github.com/Alexlink2004/about_alex_page.
 // Follow me on twitter: @AlexApo26
+
 class Navbar extends StatelessWidget {
+  Navbar({
+    this.navIcon,
+    this.navTitle,
+  });
+
+  final Image navIcon;
+  final String navTitle;
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth > 1200) {
-          return DesktopNavbar();
+          return DesktopNavbar(
+            navIcon: navIcon,
+            navTitle: navTitle,
+          );
         } else if (constraints.maxWidth > 800 && constraints.maxWidth < 1200) {
-          return MobileNavbar();
+          return DesktopNavbar(
+            navIcon: navIcon,
+            navTitle: navTitle,
+          );
         } else {
-          return MobileNavbar();
+          return MobileNavbar(
+            navIcon: navIcon,
+            navTitle: navTitle,
+          );
         }
       },
     );
@@ -23,6 +42,14 @@ class Navbar extends StatelessWidget {
 }
 
 class DesktopNavbar extends StatelessWidget {
+  DesktopNavbar({
+    this.navIcon,
+    this.navTitle,
+  });
+
+  final Image navIcon;
+  final String navTitle;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -34,16 +61,17 @@ class DesktopNavbar extends StatelessWidget {
             Row(
               children: [
                 ClipOval(
-                  child: Image.network(
-                    'https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/118069686_109531690866597_6811113650699708854_n.png?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=9FNOjFR7wjkAX9u20Z6&_nc_ht=scontent-dfw5-1.xx&oh=b6337e775703988ae06fa7cefe8ed14e&oe=5F6755F0',
-                    scale: 7,
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    child: navIcon,
                   ),
                 ),
                 SizedBox(
                   width: 13,
                 ),
                 Text(
-                  "ApoApps",
+                  navTitle,
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
@@ -100,62 +128,56 @@ class DesktopNavbar extends StatelessWidget {
 }
 
 class MobileNavbar extends StatelessWidget {
+  MobileNavbar({
+    this.navIcon,
+    this.navTitle,
+  });
+
+  final Image navIcon;
+  final String navTitle;
+
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Container(
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            ClipOval(
-              child: Image.network(
-                'https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/118069686_109531690866597_6811113650699708854_n.png?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=9FNOjFR7wjkAX9u20Z6&_nc_ht=scontent-dfw5-1.xx&oh=b6337e775703988ae06fa7cefe8ed14e&oe=5F6755F0',
-                scale: 9,
-              ),
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            Flexible(
-              flex: 4,
-              child: Column(children: <Widget>[
-                AutoSizeText(
-                  "ApoApps",
-                  maxLines: 1,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                    fontSize: 30,
+            Row(
+              children: [
+                ClipOval(
+                  child: Container(
+                    height: 50,
+                    width: 50,
+                    child: navIcon,
                   ),
                 ),
-
-//                Padding(
-//                  padding: const EdgeInsets.all(8.0),
-//                  child: Row(
-//                    mainAxisAlignment: MainAxisAlignment.center,
-//                    children: <Widget>[
-//                      SizedBox(
-//                        width: 30,
-//                      ),
-//                      AutoSizeText(
-//                        "Acerca de mi",
-//                        style: TextStyle(color: Colors.black),
-//                        softWrap: true,
-//                      ),
-//                      SizedBox(
-//                        width: 30,
-//                      ),
-//                      AutoSizeText(
-//                        "Portafolio",
-//                        overflow: TextOverflow.visible,
-//                        style: TextStyle(color: Colors.black),
-//                        softWrap: true,
-//                      ),
-//                    ],
-//                  ),
-//                )
-              ]),
+                SizedBox(
+                  width: 10,
+                ),
+                Column(children: <Widget>[
+                  AutoSizeText(
+                    navTitle,
+                    maxLines: 1,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
+                      fontSize: 30,
+                    ),
+                  ),
+                ]),
+              ],
+            ),
+            FlatButton(
+              child: Icon(
+                Icons.format_list_bulleted,
+                color: Colors.black,
+              ),
+              onPressed: () {
+                openDrawer();
+              },
             ),
           ],
         ),

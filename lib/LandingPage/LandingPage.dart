@@ -12,6 +12,12 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage> {
+  Image icon = Image.network(
+    'https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/118069686_109531690866597_6811113650699708854_n.png?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=9FNOjFR7wjkAX9u20Z6&_nc_ht=scontent-dfw5-1.xx&oh=b6337e775703988ae06fa7cefe8ed14e&oe=5F6755F0',
+    scale: 7,
+  );
+  String title = "ApoApps";
+
   int getNumberOfRows(constraints) {
     if (constraints.maxWidth < 650) {
       isLarge = false;
@@ -60,7 +66,10 @@ class _LandingPageState extends State<LandingPage> {
 
         return Column(
           children: [
-            Navbar(),
+            Navbar(
+              navIcon: icon,
+              navTitle: title,
+            ),
             Flexible(
               child: ListView(
                 children: [
