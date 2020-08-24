@@ -54,7 +54,7 @@ List<PortfolioItem> portfolioItems = [
       subtitle: 'Videojuego',
       image: Image.asset('assets/images/endlessbeats.jpg'),
       linkGooglePlay:
-      'https://play.google.com/store/apps/details?id=com.apodaca.game&hl=en',
+          'https://play.google.com/store/apps/details?id=com.apodaca.game&hl=en',
       linkAppStore:
       'https://apps.apple.com/us/app/endless-beats/id1524127084#?platform=iphone',
       description:
