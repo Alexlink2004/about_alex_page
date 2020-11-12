@@ -138,7 +138,7 @@ class MobileNavbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    // final size = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Container(

@@ -13,7 +13,7 @@ class LandingPage extends StatefulWidget {
 
 class _LandingPageState extends State<LandingPage> {
   Image icon = Image.network(
-    'https://scontent-dfw5-1.xx.fbcdn.net/v/t1.0-9/118069686_109531690866597_6811113650699708854_n.png?_nc_cat=111&_nc_sid=09cbfe&_nc_ohc=9FNOjFR7wjkAX9u20Z6&_nc_ht=scontent-dfw5-1.xx&oh=b6337e775703988ae06fa7cefe8ed14e&oe=5F6755F0',
+    'https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/118069686_109531690866597_6811113650699708854_n.png?_nc_cat=111&ccb=2&_nc_sid=85a577&_nc_ohc=Y9jKJdFZfbAAX9VZWxl&_nc_ht=scontent-lax3-2.xx&oh=bc62c6a97fcf69089e21923c175a805f&oe=5FD21F70',
     scale: 7,
   );
   String title = "ApoApps";
@@ -59,7 +59,7 @@ class _LandingPageState extends State<LandingPage> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
+    //final size = MediaQuery.of(context).size;
     return LayoutBuilder(
       builder: (context, constraints) {
         getNumberOfRows(constraints);

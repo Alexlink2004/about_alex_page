@@ -81,7 +81,8 @@ class PortfolioItemWidget extends StatelessWidget {
                                   ),
                                   AutoSizeText(
                                     title,
-                                    maxLines: 1,
+                                    maxLines: 2,
+                                    maxFontSize: 20.0,
                                     style: TextStyle(
                                         fontSize: size.width * 0.06,
                                         color: Colors.black),
@@ -165,6 +166,7 @@ class PortfolioItemWidget extends StatelessWidget {
                                   style: kColorTextStyle.copyWith(
                                       fontSize: size.width * 0.04),
                                   maxLines: 1,
+                                  maxFontSize: isLarge ? 20 : 50,
                                 ),
                                 Text(
                                   subtitle,
